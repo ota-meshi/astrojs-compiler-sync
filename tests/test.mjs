@@ -4,8 +4,8 @@ import assert from "assert";
 
 const modules = { mjs, cjs };
 
-for (const [nm, mo] of Object.entries(modules)) {
-  describe("parse test", () => {
+describe("parse test", () => {
+  for (const [nm, mo] of Object.entries(modules)) {
     it(nm, () => {
       const result = mo.parse(`---
 fn()
@@ -43,5 +43,29 @@ fn()
         },
       });
     });
-  });
-}
+
+    it(`${nm} with error`, () => {
+      const code = `---
+const foo = true
+---
+
+<!-- notice the tag is not closed properly -->
+<style is:inline set:html={""}>`;
+
+      let fail = false;
+      try {
+        mo.parse(code);
+      } catch (_e) {
+        fail = true;
+      }
+      if (!fail) assert.fail("Expected error");
+      fail = false;
+      try {
+        mo.parse(code);
+      } catch (_e) {
+        fail = true;
+      }
+      if (!fail) assert.fail("Expected error");
+    });
+  }
+});
