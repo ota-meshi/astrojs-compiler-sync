@@ -45,27 +45,35 @@ fn()
     });
 
     it(`${nm} with error`, () => {
-      const code = `---
+      const errorCode = `---
 const foo = true
 ---
 
 <!-- notice the tag is not closed properly -->
 <style is:inline set:html={""}>`;
+      const code = `---
+const foo = true
+---
+
+<!-- notice the tag is not closed properly -->
+<style is:inline set:html={""} />`;
 
       let fail = false;
       try {
-        mo.parse(code);
+        mo.parse(errorCode);
       } catch (_e) {
         fail = true;
       }
       if (!fail) assert.fail("Expected error");
+      mo.parse(code);
       fail = false;
       try {
-        mo.parse(code);
+        mo.parse(errorCode);
       } catch (_e) {
         fail = true;
       }
       if (!fail) assert.fail("Expected error");
+      mo.parse(code);
     });
   }
 });
