@@ -13,8 +13,8 @@ export function parse(code, options) {
   if (typeof service.then === "function") {
     return service.then(() => parse(code, options));
   }
-  const { ast } = getService().parse(code, options);
-  return { ast: JSON.parse(ast) };
+  const { ast, ...other } = getService().parse(code, options);
+  return { ...other, ast: JSON.parse(ast) };
 }
 
 /** setup */
