@@ -62,7 +62,6 @@ const foo = true
       let fail = false;
       try {
         mo.parse(errorCode);
-
         // FIXME: The parser has been improved so there may be no way to make it an error.
         fail = true;
       } catch (_e) {
@@ -73,6 +72,8 @@ const foo = true
       fail = false;
       try {
         mo.parse(errorCode);
+        // FIXME: The parser has been improved so there may be no way to make it an error.
+        fail = true;
       } catch (_e) {
         fail = true;
       }
