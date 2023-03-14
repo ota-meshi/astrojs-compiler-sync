@@ -123,12 +123,16 @@ const fs = {
     callback(enosys());
   },
 };
-Object.defineProperties(globalThis, {
-  fs: {
-    value: fs,
-    enumerable: true,
-  },
-});
+try {
+  Object.defineProperties(globalThis, {
+    fs: {
+      value: fs,
+      enumerable: true,
+    },
+  });
+} catch {
+  // ignore
+}
 
 function setupProcess() {
   if (typeof process === "undefined") {
@@ -160,12 +164,16 @@ function setupProcess() {
         throw enosys();
       },
     };
-    Object.defineProperties(globalThis, {
-      process: {
-        value: process,
-        enumerable: true,
-      },
-    });
+    try {
+      Object.defineProperties(globalThis, {
+        process: {
+          value: process,
+          enumerable: true,
+        },
+      });
+    } catch {
+      // ignore
+    }
   }
 }
 
