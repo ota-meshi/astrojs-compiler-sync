@@ -2,4 +2,4 @@
 "astrojs-compiler-sync": patch
 ---
 
-fix: crash for browser
+fix: crash in browser
