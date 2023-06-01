@@ -25,14 +25,27 @@ export function setup(astroVersion) {
   );
 }
 
+async function genAstroWasmUrl(astroVersion) {
+  const rootUrl = `https://unpkg.com/@astrojs/compiler${
+    astroVersion ? `@${astroVersion}` : ""
+  }`;
+  const packageJsonUrl = `${rootUrl}/package.json`;
+
+  const pkg = await fetch(packageJsonUrl).then((response) => response.json());
+
+  if (pkg.exports && pkg.exports["./astro.wasm"]) {
+    return new URL(pkg.exports["./astro.wasm"], packageJsonUrl).toString();
+  }
+
+  return "https://unpkg.com/browse/@astrojs/compiler/dist/astro.wasm";
+}
+
 async function setupImpl(astroVersion) {
   const [{ default: Go }, wasmBuffer] = await Promise.all([
     import("./wasm_exec.mjs"),
-    fetch(
-      `https://unpkg.com/@astrojs/compiler${
-        astroVersion ? `@${astroVersion}` : ""
-      }/astro.wasm`
-    ).then((response) => response.arrayBuffer()),
+    genAstroWasmUrl(astroVersion)
+      .then((url) => fetch(url))
+      .then((response) => response.arrayBuffer()),
   ]);
 
   const go = new Go();
