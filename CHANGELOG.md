@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 0.3.3
+
+### Patch Changes
+
+- [#27](https://github.com/ota-meshi/astrojs-compiler-sync/pull/27) [`7b1b68c`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/7b1b68cf22485025e88eb9794f0e89215da2e579) Thanks [@ota-meshi](https://github.com/ota-meshi)! - fix: crash in browser
+
 ## 0.3.2
 
 ### Patch Changes
