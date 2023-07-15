@@ -33,6 +33,7 @@ fn()
                   kind: "shorthand",
                   name: "foo",
                   value: "",
+                  raw: "",
                   position: { start: { line: 4, column: 7, offset: 19 } },
                 },
               ],
