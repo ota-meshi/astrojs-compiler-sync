@@ -280,7 +280,7 @@ export default class Go {
       const saddr = getInt64(addr + 0);
       const len = getInt64(addr + 8);
       return decoder.decode(
-        new DataView(this._inst.exports.mem.buffer, saddr, len)
+        new DataView(this._inst.exports.mem.buffer, saddr, len),
       );
     };
     const timeOrigin = Date.now() - performance.now();
@@ -345,8 +345,8 @@ export default class Go {
                   this._resume();
                 }
               },
-              getInt64(sp + 8) + 1 // setTimeout has been seen to fire up to 1 millisecond early
-            )
+              getInt64(sp + 8) + 1, // setTimeout has been seen to fire up to 1 millisecond early
+            ),
           );
           this.mem.setInt32(sp + 16, id, true);
         },
@@ -392,7 +392,7 @@ export default class Go {
           Reflect.set(
             loadValue(sp + 8),
             loadString(sp + 16),
-            loadValue(sp + 32)
+            loadValue(sp + 32),
           );
         },
         // func valueDelete(v ref, p string)
@@ -405,7 +405,7 @@ export default class Go {
           sp >>>= 0;
           storeValue(
             sp + 24,
-            Reflect.get(loadValue(sp + 8), getInt64(sp + 16))
+            Reflect.get(loadValue(sp + 8), getInt64(sp + 16)),
           );
         },
         // valueSetIndex(v ref, i int, x ref)
@@ -485,7 +485,7 @@ export default class Go {
           sp >>>= 0;
           this.mem.setUint8(
             sp + 24,
-            loadValue(sp + 8) instanceof loadValue(sp + 16) ? 1 : 0
+            loadValue(sp + 8) instanceof loadValue(sp + 16) ? 1 : 0,
           );
         },
         // func copyBytesToGo(dst []byte, src ref) (int, bool)
