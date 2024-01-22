@@ -15,7 +15,6 @@
   --
   modified
 */
-/* global performance -- browser */
 function enosys() {
   const err = new Error("not implemented");
   err.code = "ENOSYS";

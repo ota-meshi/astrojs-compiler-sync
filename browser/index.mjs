@@ -1,4 +1,3 @@
-/* globals fetch -- web */
 let waitSetupForAstroCompilerWasm;
 
 function getService() {
