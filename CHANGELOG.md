@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 0.3.5
+
+### Patch Changes
+
+- [#46](https://github.com/ota-meshi/astrojs-compiler-sync/pull/46) [`0220afb`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/0220afbbcd61cd2b20eae3137b710fe98b48bfb3) Thanks [@XiNiHa](https://github.com/XiNiHa)! - fix: fix .d.ts resolution for moduleResolution: node
+
 ## 0.3.4
 
 ### Patch Changes
