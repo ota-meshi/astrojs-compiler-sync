@@ -3,6 +3,7 @@
   "version": "0.3.4",
   "description": "@astrojs/compiler to process synchronously.",
   "main": "lib/index.cjs",
+  "types": "lib/index.d.ts",
   "files": [
     "lib",
     "browser"
