@@ -2,7 +2,7 @@
   "name": "astrojs-compiler-sync",
   "version": "0.3.3",
   "description": "@astrojs/compiler to process synchronously.",
-  "main": "lib/index.js",
+  "main": "lib/index.cjs",
   "files": [
     "lib",
     "browser"
