@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 0.3.4
+
+### Patch Changes
+
+- [#44](https://github.com/ota-meshi/astrojs-compiler-sync/pull/44) [`59bdc69`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/59bdc69a3aa928801f9cdbee59a00c73a6a56ded) Thanks [@XiNiHa](https://github.com/XiNiHa)! - fix: make package.json#main point to a correct file
+
 ## 0.3.3
 
 ### Patch Changes
