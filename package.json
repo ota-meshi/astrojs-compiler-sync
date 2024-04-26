@@ -20,7 +20,7 @@
   },
   "type": "module",
   "engines": {
-    "node": "^14.18.0 || >=16.0.0"
+    "node": "^18.18.0 || >=20.9.0"
   },
   "scripts": {
     "lint": "eslint .",
