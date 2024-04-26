@@ -1,6 +1,6 @@
 {
   "name": "astrojs-compiler-sync",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "description": "@astrojs/compiler to process synchronously.",
   "main": "lib/index.cjs",
   "types": "lib/index.d.ts",

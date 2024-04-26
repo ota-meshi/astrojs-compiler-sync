@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 1.0.0
+
+### Major Changes
+
+- [#56](https://github.com/ota-meshi/astrojs-compiler-sync/pull/56) [`0ef4416`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/0ef4416ff0a098a0b542bd31814de4853475a828) Thanks [@ota-meshi](https://github.com/ota-meshi)! - feat!: drop support for Node.js<v18.18
+
 ## 0.3.5
 
 ### Patch Changes
