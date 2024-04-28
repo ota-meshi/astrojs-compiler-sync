@@ -45,7 +45,7 @@
   "bugs": {
     "url": "https://github.com/ota-meshi/astrojs-compiler-sync/issues"
   },
-  "homepage": "https://github.com/ota-meshi/astro-eslint-parser#readme",
+  "homepage": "https://github.com/ota-meshi/astrojs-compiler-sync#readme",
   "peerDependencies": {
     "@astrojs/compiler": ">=0.27.0"
   },
