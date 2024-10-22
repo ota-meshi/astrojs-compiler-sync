@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 1.0.1
+
+### Patch Changes
+
+- [#62](https://github.com/ota-meshi/astrojs-compiler-sync/pull/62) [`513a7fa`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/513a7fa9de3637ddc2d92bd298a6385b360f8690) Thanks [@ota-meshi](https://github.com/ota-meshi)! - feat: support for astro/compiler 2.8 on browser
+
 ## 1.0.0
 
 ### Major Changes
