@@ -30,6 +30,7 @@ async function genAstroWasmUrl(astroVersion) {
   }`;
   const packageJsonUrl = `${rootUrl}/package.json`;
 
+  // eslint-disable-next-line n/no-unsupported-features/node-builtins -- on browser
   const pkg = await fetch(packageJsonUrl).then((response) => response.json());
 
   if (pkg.exports && pkg.exports["./astro.wasm"]) {
@@ -43,6 +44,7 @@ async function setupImpl(astroVersion) {
   const [{ default: Go }, wasmBuffer] = await Promise.all([
     import("./wasm_exec.mjs"),
     genAstroWasmUrl(astroVersion)
+      // eslint-disable-next-line n/no-unsupported-features/node-builtins -- on browser
       .then((url) => fetch(url))
       .then((response) => response.arrayBuffer()),
   ]);
