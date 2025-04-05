@@ -1,4 +1,4 @@
-import * as mjs from "../lib/index.mjs";
+import * as mjs from "../lib/index.js";
 import * as cjs from "../lib/index.cjs";
 import assert from "assert";
 
