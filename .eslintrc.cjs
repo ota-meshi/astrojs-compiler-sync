@@ -26,7 +26,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.mjs"],
+      files: ["*.js"],
       parserOptions: {
         sourceType: "module",
       },
@@ -78,6 +78,12 @@ module.exports = {
       rules: {
         "require-jsdoc": "off",
         "no-console": "off",
+      },
+    },
+    {
+      files: ["*.d.cts"],
+      rules: {
+        strict: "off",
       },
     },
   ],
