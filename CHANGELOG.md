@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 1.1.0
+
+### Minor Changes
+
+- [#70](https://github.com/ota-meshi/astrojs-compiler-sync/pull/70) [`696f0de`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/696f0deec6bfb25b4f4281b746b928ab71c9c25f) Thanks [@JounQin](https://github.com/JounQin)! - refactor: no custom worker service needed
+
 ## 1.0.1
 
 ### Patch Changes
