@@ -3,20 +3,31 @@
   "version": "1.0.1",
   "description": "@astrojs/compiler to process synchronously.",
   "main": "lib/index.cjs",
-  "types": "lib/index.d.ts",
+  "types": "lib/index.d.cts",
   "files": [
     "lib",
     "browser"
   ],
   "exports": {
     ".": {
-      "browser": "./browser/index.mjs",
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.cjs",
-      "types": "./lib/index.d.ts"
+      "browser": {
+        "types": "./browser/index.d.ts",
+        "default": "./browser/index.js"
+      },
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "require": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.cjs"
+      }
     },
-    "./package.json": "./package.json",
-    "./browser/index.mjs": "./browser/index.mjs"
+    "./browser": {
+      "types": "./browser/index.d.ts",
+      "default": "./browser/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "type": "module",
   "engines": {
@@ -25,7 +36,7 @@
   "scripts": {
     "lint": "eslint .",
     "eslint-fix": "npm run lint -- --fix",
-    "test": "mocha \"tests/**/*.mjs\" --reporter dot --timeout 60000",
+    "test": "mocha \"tests/**/*.js\" --reporter dot --timeout 60000",
     "cover": "nyc --reporter=lcov npm run test",
     "preversion": "npm run lint && npm test",
     "release": "changeset publish"
