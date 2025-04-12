@@ -1,5 +1,5 @@
 ---
-"astrojs-compiler-sync": major
+"astrojs-compiler-sync": minor
 ---
 
-refactor!: fix incorrect typing for `cjs` entry
+refactor: fix incorrect typing for `cjs` entry
