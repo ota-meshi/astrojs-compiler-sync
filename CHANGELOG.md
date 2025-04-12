@@ -1,5 +1,15 @@
 # astrojs-compiler-sync
 
+## 1.1.0
+
+### Minor Changes
+
+- [#69](https://github.com/ota-meshi/astrojs-compiler-sync/pull/69) [`5bee59c`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/5bee59c15f9af270fc793757126866cba36be0bb) Thanks [@JounQin](https://github.com/JounQin)! - refactor: fix incorrect typing for `cjs` entry
+
+- [#70](https://github.com/ota-meshi/astrojs-compiler-sync/pull/70) [`696f0de`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/696f0deec6bfb25b4f4281b746b928ab71c9c25f) Thanks [@JounQin](https://github.com/JounQin)! - refactor: no custom worker service needed
+
+- [#72](https://github.com/ota-meshi/astrojs-compiler-sync/pull/72) [`b53636b`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/b53636b633faab0fe18d36780ec7ebf90e61e858) Thanks [@JounQin](https://github.com/JounQin)! - feat: prefer native `@astrojs/compiler/sync` when available
+
 ## 1.0.1
 
 ### Patch Changes
