@@ -21,6 +21,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x, 20.x, 21.x, 22.x]
+        astro-version: [0.x, 1.3.0, 1.x, 2.x]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -29,5 +30,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Packages
         run: npm install -f
+      - name: Install @astrojs/compiler ${{ matrix.astro-version }}
+        run: npm install -D @astrojs/compiler@${{ matrix.astro-version }}
       - name: Test
         run: npm test

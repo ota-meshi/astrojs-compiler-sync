@@ -4,6 +4,33 @@ import assert from "assert";
 
 const modules = { mjs, cjs };
 
+// `raw` is only available on >=1.5.5, see also https://github.com/withastro/compiler/releases/tag/@astrojs/compiler@1.5.5
+// related PR link https://github.com/withastro/compiler/pull/820
+function cleanupRaws(object) {
+  if (object == null) {
+    return object;
+  }
+
+  if (Array.isArray(object)) {
+    object.forEach((obj) => cleanupRaws(obj));
+    return object;
+  }
+
+  if (typeof object !== "object") {
+    return object;
+  }
+
+  if (typeof object.raw === "string") {
+    delete object.raw;
+  }
+
+  for (const key of Object.keys(object)) {
+    object[key] = cleanupRaws(object[key]);
+  }
+
+  return object;
+}
+
 describe("parse test", () => {
   for (const [nm, mo] of Object.entries(modules)) {
     it(nm, () => {
@@ -12,7 +39,7 @@ fn()
 ---
 <div {foo}>`);
 
-      assert.deepStrictEqual(result, {
+      assert.deepStrictEqual(cleanupRaws(result), {
         ast: {
           type: "root",
           children: [
@@ -33,7 +60,7 @@ fn()
                   kind: "shorthand",
                   name: "foo",
                   value: "",
-                  raw: "",
+                  // raw: "",
                   position: { start: { line: 4, column: 7, offset: 19 } },
                 },
               ],
