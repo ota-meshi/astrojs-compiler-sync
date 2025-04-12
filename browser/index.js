@@ -42,7 +42,7 @@ async function genAstroWasmUrl(astroVersion) {
 
 async function setupImpl(astroVersion) {
   const [{ default: Go }, wasmBuffer] = await Promise.all([
-    import("./wasm_exec.mjs"),
+    import("./wasm_exec.js"),
     genAstroWasmUrl(astroVersion)
       // eslint-disable-next-line n/no-unsupported-features/node-builtins -- on browser
       .then((url) => fetch(url))
