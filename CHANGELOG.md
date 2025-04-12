@@ -1,5 +1,11 @@
 # astrojs-compiler-sync
 
+## 1.1.1
+
+### Patch Changes
+
+- [#74](https://github.com/ota-meshi/astrojs-compiler-sync/pull/74) [`8e6a018`](https://github.com/ota-meshi/astrojs-compiler-sync/commit/8e6a018ba29a3ad1856e8fcd5fb6a05040604983) Thanks [@JounQin](https://github.com/JounQin)! - refactor: use `require` directly in `cjs` context
+
 ## 1.1.0
 
 ### Minor Changes
